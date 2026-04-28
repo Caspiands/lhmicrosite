@@ -1,0 +1,42 @@
+Package Report
+
+-----------------------------------------------------------------------------
+Document:
+Name: LH Holiday Camp Brave Voice_FA.ai
+Color Mode: RGB color
+Color Profile: none
+Ruler Units: centimeters
+Artboard Dimensions: 21 cm x 29.7 cm
+Show Images in Outline Mode: OFF
+Highlight Substituted Fonts: OFF
+Highlight Substituted Glyphs: OFF
+Preserve Text Editability
+Simulate Colored Paper: OFF
+
+-----------------------------------------------------------------------------
+Spot Color Objects:
+
+-----------------------------------------------------------------------------
+Missing Fonts:NONE
+
+-----------------------------------------------------------------------------
+Protected Fonts that were not packaged:NONE
+
+-----------------------------------------------------------------------------
+Fonts:
+Playpen Sans Hebrew Regular (TrueType)
+Playpen Sans Hebrew SemiBold (TrueType)
+Playpen Sans Hebrew Bold (TrueType)
+Playpen Sans Hebrew ExtraBold (TrueType)
+
+-----------------------------------------------------------------------------
+Embedded Fonts:
+NONE
+
+-----------------------------------------------------------------------------
+Missing Links:
+NONE
+
+-----------------------------------------------------------------------------
+Linked Images:
+NONE

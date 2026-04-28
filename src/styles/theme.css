@@ -1,0 +1,100 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Brand tokens */
+  --brand-sun: #F8A42B;
+  --brand-sun-dark: #E78912;
+  --brand-sun-deep: #C26B0C;
+  --brand-sun-light: #FEECC5;
+  --brand-sun-lighter: #FFF6E1;
+  --brand-navy: #121A38;
+  --brand-navy-mid: #222F5A;
+  --brand-navy-light: #262A3A;
+  --brand-teal: #3BB4B8;
+  --brand-teal-dark: #268C90;
+  --brand-leaf: #7FB069;
+  --brand-yellow: #FFB820;
+  --brand-yellow-bright: #FFCB05;
+  --brand-yellow-light: #FFD04B;
+  --brand-red: #EF4146;
+  --brand-red-dark: #CC282D;
+  --brand-red-deep: #D93F3D;
+  --brand-blue: #2A368C;
+  --brand-cream: #FAF7F0;
+  --brand-cream-warm: #FDF5E8;
+
+  /* Ink tokens */
+  --ink-dark: #121A38;
+  --ink-body: #3A4052;
+  --ink-muted: #70768A;
+  --ink-light: #9CA2B2;
+  --ink-border: #E4E7EE;
+  --ink-bg: #F2F4F8;
+  --ink-subtle: #CCD0DA;
+
+  /* Font families */
+  --font-display: 'Playfair Display';
+  --font-body: 'Montserrat', sans-serif;
+  --font-body-alt: 'Montserrat', sans-serif;
+  --font-logo: 'Playfair Display', serif;
+
+  /* Base */
+  --font-size: 16px;
+  --background: #FAF7F0;
+  --foreground: #121A38;
+  --primary: #121A38;
+  --primary-foreground: #FAF7F0;
+  --border: rgba(0, 0, 0, 0.1);
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-brand-sun: var(--brand-sun);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-red: var(--brand-red);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-ink-dark: var(--ink-dark);
+  --color-ink-body: var(--ink-body);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-light: var(--ink-light);
+  --color-ink-border: var(--ink-border);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--brand-cream);
+    color: var(--ink-dark);
+  }
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
