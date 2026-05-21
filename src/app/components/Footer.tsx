@@ -52,8 +52,8 @@ export function Footer() {
             >
               EXPLORE
             </p>
-            <a href="#about" className="block text-[15px] hover:underline">
-              About
+            <a href="#about-us" className="block text-[15px] hover:underline">
+              About us
             </a>
             <a href="#programmes" className="block text-[15px] hover:underline mt-1">
               Programmes

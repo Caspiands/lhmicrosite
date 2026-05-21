@@ -1,9 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { ScrollReveal } from "./ScrollReveal";
 import { InterestForm } from "./InterestForm";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+} from "./ui/carousel";
 import {
   Dialog,
   DialogClose,
@@ -15,6 +21,8 @@ import brandTCH from "../../imports/l1.png";
 import brandOdyssey from "../../imports/l2.png";
 import brandSmallWonder from "../../imports/l3.png";
 import heroBannerClassroom from "../../imports/hero-banner-classroom.jpg";
+import heroImageHorizon from "../../imports/hero-image-horizon.png";
+import learningHorizonHero from "../../imports/learning_horizon_hero.png";
 import progSoccer from "../../imports/prog-soccer.jpg";
 import progGenio from "../../imports/prog-genio.jpg";
 import progKarate from "../../imports/prog-karate.jpg";
@@ -108,6 +116,80 @@ const camps = [
 
 function HeroAbout() {
   const reduced = useReducedMotion();
+  const slides = [
+    {
+      id: "welcome",
+      heading: (
+        <div className="flex flex-col items-start gap-4">
+          <h1
+            className="text-[44px] lg:text-[88px] leading-[1.02] tracking-tight text-[#00A94F]"
+            style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
+          >
+            Welcome to
+          </h1>
+          <img
+            src={learningHorizonHero}
+            alt="Learning Horizon"
+            className="w-full max-w-[360px] lg:max-w-[440px] h-auto"
+          />
+        </div>
+      ),
+      showButtons: false,
+      glow: "linear-gradient(135deg, rgba(214, 164, 58, 0.24) 0%, rgba(243, 202, 107, 0.28) 100%)",
+      heroImage: heroImageHorizon,
+      heroAlt: "Children learning together outdoors at sunset",
+    },
+    {
+      id: "holiday-camps",
+      heading: (
+        <h1
+          className="text-[44px] lg:text-[88px] leading-[1.02] tracking-tight"
+          style={{ fontFamily: "var(--font-display)", fontWeight: 800, color: "#00539B" }}
+        >
+          Holiday camps for{" "}
+          <span className="italic" style={{ fontWeight: 600, color: "#00539B" }}>
+            Malaysia&apos;s
+          </span>{" "}
+          <span className="italic" style={{ fontWeight: 600, color: "#00A94F" }}>
+            curious kids.
+          </span>
+        </h1>
+      ),
+      showButtons: true,
+      glow: "linear-gradient(135deg, rgba(0, 83, 155, 0.18) 0%, rgba(0, 169, 79, 0.2) 100%)",
+      heroImage: heroBannerClassroom,
+      heroAlt: "Teacher and children gathered around a globe in a classroom",
+    },
+  ] as const;
+  const [api, setApi] = useState<CarouselApi>();
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    const updateActiveSlide = () => {
+      setActiveSlide(api.selectedScrollSnap());
+    };
+
+    updateActiveSlide();
+    api.on("select", updateActiveSlide);
+    api.on("reInit", updateActiveSlide);
+
+    return () => {
+      api.off("select", updateActiveSlide);
+      api.off("reInit", updateActiveSlide);
+    };
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+
+    const timer = window.setInterval(() => {
+      api.scrollNext();
+    }, 5500);
+
+    return () => window.clearInterval(timer);
+  }, [api]);
 
   return (
     <section
@@ -115,61 +197,77 @@ function HeroAbout() {
       className="relative overflow-hidden"
       style={{ background: "linear-gradient(180deg, #FDF5E8 0%, #FAF7F0 100%)" }}
     >
-      <div className="max-w-[1280px] mx-auto px-5 lg:px-20 pt-16 lg:pt-24 pb-20 lg:pb-28 grid grid-cols-1 lg:grid-cols-[1.15fr_0.95fr] gap-12 items-center">
-        <div>
-          <h1
-            className="text-[44px] lg:text-[88px] leading-[1.02] tracking-tight"
-            style={{ fontFamily: "var(--font-display)", fontWeight: 800, color: "#00539B" }}
-          >
-            Holiday camps for{" "}
-            <span className="italic" style={{ fontWeight: 600, color: "#00539B" }}>
-              Malaysia&apos;s
-            </span>{" "}
-            <span className="italic" style={{ fontWeight: 600, color: "#00A94F" }}>
-              curious kids.
-            </span>
-          </h1>
-          <div className="flex flex-wrap gap-3 mt-10">
-            <a
-              href="#programmes"
-              className="bg-[var(--brand-navy)] text-[var(--brand-cream)] px-6 py-3.5 rounded-full text-[15px] hover:scale-[1.02] transition-transform"
-              style={{ fontFamily: "var(--font-body)", fontWeight: 700 }}
-            >
-              See programmes →
-            </a>
-            <a
-              href="#contact"
-              className="border-[1.5px] border-[var(--brand-navy)] text-[var(--brand-navy)] px-6 py-3.5 rounded-full text-[15px] hover:bg-[var(--brand-navy)] hover:text-[var(--brand-cream)] transition-colors"
-              style={{ fontFamily: "var(--font-body)", fontWeight: 700 }}
-            >
-              Get in touch
-            </a>
-          </div>
-        </div>
-        <motion.div
-          initial={reduced ? false : { opacity: 0, scale: 0.96, x: 18 }}
-          animate={reduced ? undefined : { opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0"
-        >
-          <div
-            className="pointer-events-none absolute inset-[-14px] rounded-[44px] opacity-70 blur-[10px]"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(0, 83, 155, 0.18) 0%, rgba(0, 169, 79, 0.2) 100%)",
-            }}
-          />
-          <div
-            className="relative overflow-hidden rounded-[40px] border border-white/70 bg-[#FFF8F0] p-3"
-            style={{ boxShadow: "0 30px 80px rgba(18, 26, 56, 0.16)" }}
-          >
-            <ImageWithFallback
-              src={heroBannerClassroom}
-              alt="Teacher and children gathered around a globe in a classroom"
-              className="block aspect-[4/3] w-full rounded-[30px] object-cover object-center"
+      <div className="w-full pt-10 lg:pt-12 pb-10 lg:pb-14">
+        <Carousel setApi={setApi} opts={{ loop: true, align: "start" }} className="w-full">
+          <CarouselContent className="ml-0">
+            {slides.map((slide) => (
+              <CarouselItem key={slide.id} className="pl-0">
+                <div className="max-w-[1280px] mx-auto px-5 lg:px-20">
+                  <div className="grid min-h-[470px] lg:min-h-[540px] grid-cols-1 lg:grid-cols-[1.15fr_0.95fr] gap-12 items-center">
+                  <div>
+                    {slide.heading}
+                    {slide.showButtons ? (
+                      <div className="flex flex-wrap gap-3 mt-10">
+                        <a
+                          href="#programmes"
+                          className="bg-[var(--brand-navy)] text-[var(--brand-cream)] px-6 py-3.5 rounded-full text-[15px] hover:scale-[1.02] transition-transform"
+                          style={{ fontFamily: "var(--font-body)", fontWeight: 700 }}
+                        >
+                          See programmes →
+                        </a>
+                        <a
+                          href="#contact"
+                          className="border-[1.5px] border-[var(--brand-navy)] text-[var(--brand-navy)] px-6 py-3.5 rounded-full text-[15px] hover:bg-[var(--brand-navy)] hover:text-[var(--brand-cream)] transition-colors"
+                          style={{ fontFamily: "var(--font-body)", fontWeight: 700 }}
+                        >
+                          Get in touch
+                        </a>
+                      </div>
+                    ) : null}
+                  </div>
+                  <motion.div
+                    initial={reduced ? false : { opacity: 0, scale: 0.96, x: 18 }}
+                    animate={reduced ? undefined : { opacity: 1, scale: 1, x: 0 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    className="relative w-full max-w-[540px] mx-auto lg:ml-auto lg:mr-0"
+                  >
+                      <div
+                      className="pointer-events-none absolute inset-[-14px] rounded-[44px] opacity-70 blur-[10px]"
+                      style={{
+                        background: slide.glow,
+                      }}
+                    />
+                    <div
+                      className="relative overflow-hidden rounded-[40px] border border-white/70 bg-[#FFF8F0] p-3"
+                      style={{ boxShadow: "0 30px 80px rgba(18, 26, 56, 0.16)" }}
+                    >
+                      <ImageWithFallback
+                        src={slide.heroImage}
+                        alt={slide.heroAlt}
+                        className="block aspect-[4/3] w-full min-h-[280px] lg:min-h-[330px] rounded-[30px] object-cover object-center"
+                      />
+                    </div>
+                  </motion.div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+        <div className="mt-8 flex items-center justify-center gap-3">
+          {slides.map((slide, index) => (
+            <button
+              key={slide.id}
+              type="button"
+              aria-label={`Go to slide ${index + 1}`}
+              aria-pressed={activeSlide === index}
+              onClick={() => api?.scrollTo(index)}
+              className={`h-2.5 rounded-full transition-all ${
+                activeSlide === index ? "w-9 bg-[var(--brand-navy)]" : "w-2.5 bg-[rgba(18,26,56,0.24)]"
+              }`}
             />
-          </div>
-        </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -267,8 +365,8 @@ function ProgrammesSection() {
               className="text-[var(--ink-body)] text-lg max-w-[420px]"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Each holiday programme is age-appropriate, small-group, and built around play. Pick
-              the right fit for your child.
+              Each of our Enrichment programmes are age-appropriate, small-group, and built around
+              play. Pick the right fit for your child.
             </p>
           </div>
         </ScrollReveal>
@@ -277,7 +375,7 @@ function ProgrammesSection() {
           className="-mx-5 lg:-mx-20 px-5 lg:px-20 overflow-x-auto scroll-smooth snap-x snap-mandatory"
           style={{ scrollbarWidth: "thin" }}
         >
-          <div className="flex gap-5 pb-4">
+          <div className="flex gap-5 px-2 lg:px-3 pb-4">
             {programmeLeaflets.map((programme) => (
               <Dialog key={programme.name}>
                 <div className="group snap-start shrink-0 w-[calc(100vw-40px)] sm:w-[300px] lg:w-[calc((1280px-3*20px)/4)] bg-white rounded-[24px] overflow-hidden border border-[var(--ink-border)] hover:shadow-[0_12px_32px_rgba(18,26,56,0.1)] transition-shadow">
@@ -386,6 +484,13 @@ function ProgrammesSection() {
             ))}
           </div>
         </div>
+        <p
+          className="mt-6 text-[12px] italic text-[var(--ink-muted)]"
+          style={{ fontFamily: "var(--font-body)", fontWeight: 500 }}
+        >
+          Note: Enrichment programmes currently only available for children enrolled in Busy Bees
+          Group of preschools.
+        </p>
       </div>
     </section>
   );
