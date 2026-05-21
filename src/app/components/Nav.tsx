@@ -5,7 +5,7 @@ import beeIcon from "../../imports/Beeicon.png";
 import busyBeesLogo from "../../imports/BusyBeesAsia.png";
 
 const navLinks = [
-  { label: "About Us", href: "#about" },
+  { label: "About us", href: "#about-us" },
   { label: "Programmes", href: "#programmes" },
   { label: "Brands", href: "#brands" },
   { label: "Camps", href: "#camps" },

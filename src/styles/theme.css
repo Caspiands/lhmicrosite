@@ -33,10 +33,10 @@
   --ink-subtle: #CCD0DA;
 
   /* Font families */
-  --font-display: 'Playfair Display';
+  --font-display: 'Montserrat', sans-serif;
   --font-body: 'Montserrat', sans-serif;
   --font-body-alt: 'Montserrat', sans-serif;
-  --font-logo: 'Playfair Display', serif;
+  --font-logo: 'Montserrat', sans-serif;
 
   /* Base */
   --font-size: 16px;
