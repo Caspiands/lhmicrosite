@@ -22,7 +22,7 @@ import brandOdyssey from "../../imports/l2.png";
 import brandSmallWonder from "../../imports/l3.png";
 import heroBannerClassroom from "../../imports/hero-banner-classroom.jpg";
 import heroImageHorizon from "../../imports/hero-image-horizon.png";
-import learningHorizonHero from "../../imports/logo-lh-clear.png";
+import learningHorizonHero from "../../imports/the-logo-lh.png";
 import progSoccer from "../../imports/prog-soccer.jpg";
 import progGenio from "../../imports/prog-genio.jpg";
 import progKarate from "../../imports/prog-karate.jpg";
