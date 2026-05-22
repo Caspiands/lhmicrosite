@@ -22,7 +22,7 @@ import brandOdyssey from "../../imports/l2.png";
 import brandSmallWonder from "../../imports/l3.png";
 import heroBannerClassroom from "../../imports/hero-banner-classroom.jpg";
 import heroImageHorizon from "../../imports/hero-image-horizon.png";
-import learningHorizonHero from "../../imports/learning_horizon_hero.png";
+import learningHorizonHero from "../../imports/logo-lh-clear.png";
 import progSoccer from "../../imports/prog-soccer.jpg";
 import progGenio from "../../imports/prog-genio.jpg";
 import progKarate from "../../imports/prog-karate.jpg";
@@ -120,7 +120,7 @@ function HeroAbout() {
     {
       id: "welcome",
       heading: (
-        <div className="flex flex-col items-start gap-4">
+        <div className="flex flex-col items-center lg:items-center gap-4 text-center">
           <h1
             className="text-[44px] lg:text-[88px] leading-[1.02] tracking-tight text-[#00A94F]"
             style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
@@ -130,7 +130,7 @@ function HeroAbout() {
           <img
             src={learningHorizonHero}
             alt="Learning Horizon"
-            className="w-full max-w-[360px] lg:max-w-[440px] h-auto"
+            className="w-full max-w-[420px] lg:max-w-[500px] h-auto mx-auto"
           />
         </div>
       ),
