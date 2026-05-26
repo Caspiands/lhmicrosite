@@ -363,7 +363,7 @@ function ProgrammesSection() {
               className="text-[var(--ink-body)] text-lg max-w-[420px]"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Each of our Enrichment programmes are age-appropriate, small-group, and built around
+              Each of our enrichment programmes are age-appropriate, small-group, and built around
               play. Pick the right fit for your child.
             </p>
           </div>
