@@ -10,35 +10,18 @@ const braveVoicesCentres = [
   "SW Mutiara Damansara", "SW Eco Ardence", "SW Bandar Parklands", "SW OUG"
 ];
 
-function getPricingTier(programme: string): { label: string; price: string } {
-  const now = new Date();
-  const earlyEnd = new Date("2026-05-15T23:59:59");
-  const standardEnd = new Date("2026-05-24T23:59:59");
-  const lateEnd = new Date("2026-05-29T23:59:59");
-
-  const isSky = programme === "sky-rangers";
-
-  if (now <= earlyEnd) return { label: "Early Bird (11–15 May)", price: isSky ? "RM 400" : "RM 350" };
-  if (now <= standardEnd) return { label: "Standard (16–24 May)", price: isSky ? "RM 500" : "RM 450" };
-  if (now <= lateEnd) return { label: "Late (25–29 May)", price: isSky ? "RM 600" : "RM 550" };
-  return { label: "Registration closed", price: "—" };
-}
-
 interface Props {
   defaultProgramme?: "sky-rangers" | "brave-voices";
-  accentColor?: string;
 }
 
-export function InterestForm({ defaultProgramme = "sky-rangers", accentColor = "var(--brand-yellow)" }: Props) {
-  const [programme, setProgramme] = useState(defaultProgramme);
+export function InterestForm({ defaultProgramme = "sky-rangers" }: Props) {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [shaking, setShaking] = useState(false);
   const [loading, setLoading] = useState(false);
   const reduced = useReducedMotion();
 
-  const tier = getPricingTier(programme);
-  const centres = programme === "sky-rangers" ? skyRangersCentres : braveVoicesCentres;
+  const centres = defaultProgramme === "sky-rangers" ? skyRangersCentres : braveVoicesCentres;
 
   const fireConfetti = useCallback(() => {
     if (reduced) return;
@@ -52,9 +35,7 @@ export function InterestForm({ defaultProgramme = "sky-rangers", accentColor = "
 
     const form = new FormData(e.currentTarget);
     const data = Object.fromEntries(form.entries());
-    data.programme = programme;
-    data.pricingTier = tier.label;
-    data.price = tier.price;
+    data.programme = defaultProgramme;
 
     try {
       const webhookUrl = (import.meta as any).env?.VITE_FORM_WEBHOOK_URL || "";
@@ -104,22 +85,6 @@ export function InterestForm({ defaultProgramme = "sky-rangers", accentColor = "
       </h3>
       <p className="text-[var(--ink-muted)] mb-8" style={{ fontFamily: "var(--font-body)" }}>No payment required. We'll WhatsApp you within 24 hours.</p>
 
-      {/* Programme radio */}
-      <fieldset className="mb-8">
-        <legend className={labelClass}>PROGRAMME</legend>
-        <div className="flex gap-3">
-          {([["sky-rangers", "Sky Rangers", "var(--brand-yellow)"], ["brave-voices", "Brave Voices", "var(--brand-red)"]] as const).map(([val, label, color]) => (
-            <label
-              key={val}
-              className={`flex-1 cursor-pointer rounded-2xl border-2 px-4 py-3 text-center font-semibold transition-all ${programme === val ? 'shadow-md' : 'border-[var(--ink-border)]'}`}
-              style={{ borderColor: programme === val ? color : undefined, background: programme === val ? `color-mix(in srgb, ${color} 8%, white)` : undefined }}
-            >
-              <input type="radio" name="programme_radio" value={val} checked={programme === val} onChange={() => setProgramme(val as any)} className="sr-only" />
-              {label}
-            </label>
-          ))}
-        </div>
-      </fieldset>
 
       <div className="grid lg:grid-cols-2 gap-5 mb-6">
         {/* Parent info */}
@@ -173,20 +138,13 @@ export function InterestForm({ defaultProgramme = "sky-rangers", accentColor = "
       </div>
 
       <div className="border-t border-[var(--ink-border)] pt-6 mb-6">
-        <div className="grid lg:grid-cols-2 gap-5">
-          <div>
+        <div className="flex justify-center">
+          <div className="w-full lg:w-1/2">
             <label className={labelClass}>PREFERRED CENTRE *</label>
             <select name="centre" required className={inputClass}>
               <option value="">Choose a centre</option>
               {centres.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
-          </div>
-          <div>
-            <label className={labelClass}>PRICING TIER</label>
-            <div className="rounded-2xl bg-[var(--ink-bg)] px-4 py-3.5 border border-[var(--ink-border)]">
-              <span className="font-bold text-lg" style={{ color: accentColor }}>{tier.price}</span>
-              <span className="text-sm text-[var(--ink-muted)] ml-2">{tier.label}</span>
-            </div>
           </div>
         </div>
       </div>
@@ -206,7 +164,7 @@ export function InterestForm({ defaultProgramme = "sky-rangers", accentColor = "
         className="w-full bg-[var(--brand-navy)] text-[var(--brand-cream)] py-4 rounded-full font-bold text-[17px] transition-all hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70"
         style={{ fontFamily: "var(--font-body)" }}
       >
-        {loading ? "Submitting..." : `Register interest — ${tier.price}`}
+        {loading ? "Submitting..." : "Register interest"}
       </motion.button>
 
       {error && (

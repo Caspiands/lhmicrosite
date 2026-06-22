@@ -58,10 +58,7 @@ export function Footer() {
             <a href="#programmes" className="block text-[15px] hover:underline mt-1">
               Programmes
             </a>
-            <a href="#camps" className="block text-[15px] hover:underline mt-1">
-              Upcoming camps
-            </a>
-            <a href="#contact" className="block text-[15px] hover:underline mt-1">
+<a href="#contact" className="block text-[15px] hover:underline mt-1">
               Contact
             </a>
           </div>
