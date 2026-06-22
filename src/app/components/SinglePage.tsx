@@ -786,12 +786,20 @@ function ProgrammeTabsSection() {
                   {activeMobile === i ? <MinusIcon /> : <PlusIcon />}
                 </span>
               </button>
-              {activeMobile === i && (
-                <div className="p-5" style={{ background: "rgb(248, 248, 248)" }}>
-                  <img src={tab.mobileImg} alt={tab.title} className="w-full h-auto mb-5 rounded-xl" />
-                  {tab.content}
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateRows: activeMobile === i ? "1fr" : "0fr",
+                  transition: "grid-template-rows 300ms ease",
+                }}
+              >
+                <div style={{ overflow: "hidden" }}>
+                  <div className="p-5" style={{ background: "rgb(248, 248, 248)" }}>
+                    <img src={tab.mobileImg} alt={tab.title} className="w-full h-auto mb-5 rounded-xl" />
+                    {tab.content}
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
