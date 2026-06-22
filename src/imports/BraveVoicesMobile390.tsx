@@ -1595,7 +1595,7 @@ function LearningHorizonLogoOnDark() {
 function Frame105() {
   return (
     <div className="content-stretch flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal gap-[8px] items-start leading-[22px] overflow-clip relative shrink-0 text-[#faf7f0] text-[14px] w-full whitespace-pre" data-name="Frame">
-      <p className="relative shrink-0" style={{ fontVariationSettings: "'opsz' 14" }}>{`✉  hello@learninghorizon.my`}</p>
+      <p className="relative shrink-0" style={{ fontVariationSettings: "'opsz' 14" }}>{`✉  enquiry@learninghorizon.asia`}</p>
       <p className="relative shrink-0" style={{ fontVariationSettings: "'opsz' 14" }}>{`📞  +603 6205 3033`}</p>
       <p className="relative shrink-0" style={{ fontVariationSettings: "'opsz' 14" }}>{`💬  WhatsApp us`}</p>
     </div>

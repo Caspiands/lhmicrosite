@@ -26,7 +26,7 @@ export function Nav({ bgColor = "bg-[#faf7f0]" }: { bgColor?: string }) {
         <div className="flex items-center justify-between px-20 py-2.5 text-[var(--brand-cream)] text-xs" style={{ fontFamily: "var(--font-body)" }}>
           <p>busybeesasia.my&ensp;/&ensp;Learning Horizon&ensp;/&ensp;Holiday Camp 2026</p>
           <div className="flex gap-6">
-            <p>✉&ensp;hello@learninghorizon.my</p>
+            <p>✉&ensp;enquiry@learninghorizon.asia</p>
             <p>📞&ensp;+603 6205 3033</p>
           </div>
         </div>

@@ -22,6 +22,8 @@ import brandOdyssey from "../../imports/l2.png";
 import brandSmallWonder from "../../imports/l3.png";
 import heroBannerClassroom from "../../imports/hero-banner-classroom.jpg";
 import heroImageHorizon from "../../imports/hero-image-horizon.png";
+import heroDesktop from "../../imports/hero-desktop.jpg";
+import heroMobile from "../../imports/hero-mobile.jpg";
 import learningHorizonHero from "../../imports/the-logo-lh.png";
 import progSoccer from "../../imports/prog-soccer.jpg";
 import progGenio from "../../imports/prog-genio.jpg";
@@ -31,6 +33,19 @@ import progBallerina from "../../imports/prog-ballerina.jpg";
 import progBuilder from "../../imports/prog-builder.jpg";
 import progEinstein from "../../imports/prog-einstein.jpg";
 import progThespian from "../../imports/prog-thespian.jpg";
+// ── Programme tabs images (upload to src/imports/ with these exact filenames) ──
+import tabHolidayWorkshopsDesktop   from "../../imports/tab-holiday-workshops-desktop.png";
+import tabHolidayWorkshopsMobile    from "../../imports/tab-holiday-workshops-mobile.png";
+import tabDayCampsDesktop           from "../../imports/tab-day-camps-desktop.png";
+import tabDayCampsMobile            from "../../imports/tab-day-camps-mobile.png";
+import tabExcursionDesktop          from "../../imports/tab-excursion-desktop.png";
+import tabExcursionMobile           from "../../imports/tab-excursion-mobile.png";
+import tabParentChildDesktop        from "../../imports/tab-parent-child-desktop.png";
+import tabParentChildMobile         from "../../imports/tab-parent-child-mobile.png";
+import tabPreschoolDesktop          from "../../imports/tab-preschool-immersion-desktop.png";
+import tabPreschoolMobile           from "../../imports/tab-preschool-immersion-mobile.png";
+import tabParentalEngagementDesktop from "../../imports/tab-parental-engagement-desktop.png";
+import tabParentalEngagementMobile  from "../../imports/tab-parental-engagement-mobile.png";
 
 const programmeLeaflets = [
   {
@@ -91,30 +106,30 @@ const programmeLeaflets = [
   },
 ] as const;
 
-const camps = [
-  {
-    name: "Sky Rangers Holiday 2026",
-    dates: "26 - 30 May 2026",
-    venue: "TCH & Small Wonder Centres",
-    accent: "rgb(0, 83, 155)",
-    text: "var(--brand-cream)",
-    buttonBg: "rgba(255, 248, 240, 0.95)",
-    buttonText: "var(--brand-navy)",
-    programme: "sky-rangers" as const,
-  },
-  {
-    name: "Brave Voices Holiday 2026",
-    dates: "26 - 30 May 2026",
-    venue: "Small Wonder Centres",
-    accent: "rgb(0, 169, 79)",
-    text: "var(--brand-cream)",
-    buttonBg: "rgba(255, 248, 240, 0.95)",
-    buttonText: "var(--brand-navy)",
-    programme: "brave-voices" as const,
-  },
-];
 
 function HeroAbout() {
+  return (
+    <section id="about">
+      {/* Desktop image — hidden on mobile */}
+      <img
+        src={heroDesktop}
+        alt="Learning Horizon hero"
+        className="hidden md:block w-full object-cover"
+        style={{ height: "590px" }}
+      />
+      {/* Mobile image — hidden on desktop */}
+      <img
+        src={heroMobile}
+        alt="Learning Horizon hero"
+        className="block md:hidden w-full object-cover"
+        style={{ height: "700px" }}
+      />
+    </section>
+  );
+}
+
+/* ── Old HeroAbout (carousel) — kept for reference ──
+function HeroAboutOld() {
   const reduced = useReducedMotion();
   const slides = [
     {
@@ -270,6 +285,7 @@ function HeroAbout() {
     </section>
   );
 }
+── */
 
 function AboutSection() {
   return (
@@ -550,78 +566,236 @@ function OurBrandsSection() {
   );
 }
 
-function CampsSection() {
-  return (
-    <section id="camps" className="bg-white py-20 lg:py-28 px-5 lg:px-20">
-      <div className="max-w-[1280px] mx-auto">
-        <ScrollReveal>
-          <div className="mb-14">
-            <p
-              className="text-[var(--brand-navy)]/70 text-[12px] tracking-[1.8px] mb-5"
-              style={{ fontFamily: "var(--font-body)", fontWeight: 700 }}
-            >
-              UPCOMING CAMPS
-            </p>
-            <h2
-              className="text-4xl lg:text-[56px] leading-[1.05] tracking-tight text-[var(--brand-navy)]"
-              style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
-            >
-              May Holiday{" "}
-              <span className="italic" style={{ fontWeight: 600, color: "#00539B" }}>
-                2026.
-              </span>
-            </h2>
-          </div>
-        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {camps.map((camp, index) => (
-            <ScrollReveal key={camp.name} delay={index * 0.08}>
-              <div
-                className="rounded-[40px] p-8 lg:p-10 flex flex-col gap-5 min-h-[260px]"
-                style={{ background: camp.accent, color: camp.text }}
+function PlusIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect y="6.66675" width="15" height="1.66667" fill="currentColor" />
+      <rect x="8.33301" width="15" height="1.66667" transform="rotate(90 8.33301 0)" fill="currentColor" />
+    </svg>
+  );
+}
+
+function MinusIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect y="6.66675" width="15" height="1.66667" fill="currentColor" />
+    </svg>
+  );
+}
+
+const programmeTabs = [
+  {
+    title: "Holiday Workshops",
+    desktopImg: tabHolidayWorkshopsDesktop,
+    mobileImg: tabHolidayWorkshopsMobile,
+    content: (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[var(--ink-body)]">
+        <div>
+          <p className="mb-2 text-[var(--ink-dark)]" style={{ fontFamily: "var(--font-body)", fontWeight: 700 }}>
+            Framework
+          </p>
+          <ul className="list-disc pl-5 space-y-1.5 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+            <li>Sports</li>
+            <li>Aesthetics and Creativity</li>
+            <li>Development</li>
+            <li>Information and Communication Technologies</li>
+            <li>Lifeskills</li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-[17px] mb-2" style={{ fontFamily: "var(--font-body)" }}>
+            Embedded in our holistic SAIL framework, our programmes may focus on one or more of the following themes:
+          </p>
+          <ul className="list-disc pl-5 space-y-1.5 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+            <li>Sports and Fitness Courses</li>
+            <li>Confident and Communicators Courses</li>
+            <li>Cultural Tour</li>
+            <li>STEAM Courses</li>
+            <li>Technopreneurship Courses</li>
+            <li>Life Skills and Bush Craft</li>
+          </ul>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Day Camps",
+    desktopImg: tabDayCampsDesktop,
+    mobileImg: tabDayCampsMobile,
+    content: (
+      <div className="text-[var(--ink-body)]">
+        <ul className="list-disc pl-5 space-y-1.5 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+          <li>Camp Explorer</li>
+          <li>Camp Adventure</li>
+          <li>Camp Discovery</li>
+        </ul>
+        <p className="mt-3 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+          From exploring to discovering, take a look at our exciting camp series here.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Excursion / Field Trips",
+    desktopImg: tabExcursionDesktop,
+    mobileImg: tabExcursionMobile,
+    content: (
+      <div className="text-[var(--ink-body)]">
+        <p className="text-[17px] mb-2" style={{ fontFamily: "var(--font-body)" }}>
+          Having collaborated with private childcares and kindergartens, the following were customised as part of their curriculums:
+        </p>
+        <ul className="list-disc pl-5 space-y-1.5 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+          <li>Excursion</li>
+          <li>Field Trips</li>
+          <li>Learning Journey</li>
+          <li>Cultural Trails</li>
+        </ul>
+        <p className="mt-3 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+          Speak to us to find out more!
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Parent-Child Programme",
+    desktopImg: tabParentChildDesktop,
+    mobileImg: tabParentChildMobile,
+    content: (
+      <div className="text-[var(--ink-body)]">
+        <p className="text-[17px] mb-2" style={{ fontFamily: "var(--font-body)" }}>
+          Parents have also enjoyed the following programmes specially designed for them:
+        </p>
+        <ul className="list-disc pl-5 space-y-1.5 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+          <li>Parent-Child Cook-Off</li>
+          <li>Take Flight</li>
+          <li>Overseas Overnight Camps</li>
+        </ul>
+        <p className="mt-3 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+          Bond over fun and hands-on activities with us today!
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Preschool Immersion",
+    desktopImg: tabPreschoolDesktop,
+    mobileImg: tabPreschoolMobile,
+    content: (
+      <div className="text-[var(--ink-body)] space-y-3">
+        <p className="text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+          A programme launched to provide a platform for international students to experience the preschool education learning environment of a different culture.
+        </p>
+        <p className="text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+          We have successfully collaborated with preschools both locally and globally to be engaged in this wonderful experience, speak to us as we welcome students from all around the world.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Parental Engagement",
+    desktopImg: tabParentalEngagementDesktop,
+    mobileImg: tabParentalEngagementMobile,
+    content: (
+      <div className="text-[var(--ink-body)] space-y-3">
+        <p className="text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+          How do parents encourage 21st century learning?
+        </p>
+        <p className="text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+          Join us as we conduct hands-on workshops highlighting the importance of the 21st century skills in today&apos;s society &ndash; a very different approach from the traditional education that parents received when they were younger.
+        </p>
+      </div>
+    ),
+  },
+];
+
+function ProgrammeTabsSection() {
+  const [active, setActive] = useState(0);
+  const [activeMobile, setActiveMobile] = useState<number | null>(0);
+
+  return (
+    <section id="programme-tabs" className="py-16 lg:py-20 px-5 lg:px-20" style={{ background: "rgb(250, 247, 240)" }}>
+      <div className="max-w-[1280px] mx-auto">
+
+        {/* Title */}
+        <div className="text-center mb-12">
+<h2
+            className="text-4xl lg:text-[52px] leading-[1.08] tracking-tight text-[var(--brand-navy)]"
+            style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
+          >
+            Customised Programmes
+          </h2>
+        </div>
+
+        {/* ── Desktop: vertical tabs left + content right ── */}
+        <div className="hidden md:flex gap-0 items-stretch">
+
+          {/* Left: stacked tab buttons */}
+          <div className="w-[300px] shrink-0 flex flex-col gap-3 h-full mt-5" role="tablist" aria-label="Programme categories">
+            {programmeTabs.map((tab, i) => (
+              <button
+                key={tab.title}
+                role="tab"
+                aria-selected={active === i}
+                onClick={() => setActive(i)}
+                className={`w-full flex-1 flex items-center px-6 py-7 rounded-l-full rounded-r-none text-[16px] transition-colors shadow-[inset_0_-6px_8px_rgba(0,0,0,0.08)] ${
+                  active === i
+                    ? "bg-[#e0f5ea] text-[#00A94F]"
+                    : "bg-[#f0f0f0] text-[#333333] hover:bg-[#e8e8e8]"
+                }`}
+                style={{ fontFamily: "Raleway, Arial, sans-serif", fontWeight: 600 }}
               >
-                <p
-                  className="text-[12px] tracking-[1.2px]"
-                  style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}
-                >
-                  {camp.dates.toUpperCase()}
-                </p>
-                <h3
-                  className="text-3xl lg:text-[40px] leading-[1.05]"
-                  style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
-                >
-                  {camp.name}
-                </h3>
-                <p
-                  className="text-base opacity-90"
-                  style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}
-                >
-                  {camp.venue}
-                </p>
-                <a
-                  href="#contact"
-                  onClick={() => {
-                    if (typeof window !== "undefined") {
-                      window.dispatchEvent(
-                        new CustomEvent("prefill-programme", { detail: camp.programme }),
-                      );
-                    }
-                  }}
-                  className="self-start mt-auto px-5 py-3 rounded-full text-[14px] transition-colors"
+                {tab.title}
+              </button>
+            ))}
+          </div>
+
+          {/* Right: content — all panels rendered in same grid cell so height = tallest */}
+          <div className="flex-1 min-w-0 p-10 rounded-2xl" style={{ background: "rgb(248, 248, 248)" }}>
+            <div className="grid">
+              {programmeTabs.map((tab, i) => (
+                <div
+                  key={tab.title}
+                  className="transition-opacity duration-200"
                   style={{
-                    fontFamily: "var(--font-body)",
-                    fontWeight: 700,
-                    background: camp.buttonBg,
-                    color: camp.buttonText,
+                    gridArea: "1 / 1",
+                    opacity: active === i ? 1 : 0,
+                    pointerEvents: active === i ? "auto" : "none",
                   }}
                 >
-                  RSVP now →
-                </a>
-              </div>
-            </ScrollReveal>
+                  <img src={tab.desktopImg} alt={tab.title} className="w-full h-auto rounded-xl mb-6" />
+                  {tab.content}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ── Mobile: accordion ── */}
+        <div className="md:hidden flex flex-col gap-3">
+          {programmeTabs.map((tab, i) => (
+            <div key={tab.title} className="rounded-xl overflow-hidden shadow-[inset_0_-6px_8px_rgba(0,0,0,0.08)]" style={{ background: activeMobile === i ? "#e0f5ea" : "#f0f0f0" }}>
+              <button
+                className="w-full flex items-center justify-between px-5 py-4 text-left text-[15px]"
+                style={{ fontFamily: "Raleway, Arial, sans-serif", fontWeight: 600, color: activeMobile === i ? "#00A94F" : "#333333" }}
+                onClick={() => setActiveMobile(activeMobile === i ? null : i)}
+                aria-expanded={activeMobile === i}
+              >
+                <span>{tab.title}</span>
+                <span className="text-[var(--ink-muted)] ml-3 shrink-0">
+                  {activeMobile === i ? <MinusIcon /> : <PlusIcon />}
+                </span>
+              </button>
+              {activeMobile === i && (
+                <div className="p-5" style={{ background: "rgb(248, 248, 248)" }}>
+                  <img src={tab.mobileImg} alt={tab.title} className="w-full h-auto mb-5 rounded-xl" />
+                  {tab.content}
+                </div>
+              )}
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   );
@@ -687,7 +861,7 @@ export function SinglePage() {
       <AboutSection />
       <ProgrammesSection />
       <OurBrandsSection />
-      <CampsSection />
+      <ProgrammeTabsSection />
       <ContactSection />
     </main>
   );

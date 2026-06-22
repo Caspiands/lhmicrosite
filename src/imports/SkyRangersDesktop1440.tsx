@@ -3,7 +3,7 @@ import svgPaths from "./svg-8qluf0ww6r";
 function Frame() {
   return (
     <div className="content-stretch flex gap-[24px] items-center overflow-clip relative shrink-0" data-name="Frame">
-      <p className="relative shrink-0" style={{ fontVariationSettings: "'opsz' 14" }}>{`✉  hello@learninghorizon.my`}</p>
+      <p className="relative shrink-0" style={{ fontVariationSettings: "'opsz' 14" }}>{`✉  enquiry@learninghorizon.asia`}</p>
       <p className="relative shrink-0" style={{ fontVariationSettings: "'opsz' 14" }}>{`📞  +603 6205 3033`}</p>
     </div>
   );
@@ -3255,7 +3255,7 @@ function Frame237() {
         CONTACT
       </p>
       <p className="font-['DM_Sans:Regular',sans-serif] font-normal leading-[26px] relative shrink-0 text-[#faf7f0] text-[16px]" style={{ fontVariationSettings: "'opsz' 14" }}>
-        hello@learninghorizon.my
+        enquiry@learninghorizon.asia
       </p>
       <p className="font-['DM_Sans:Regular',sans-serif] font-normal leading-[26px] relative shrink-0 text-[#faf7f0] text-[16px]" style={{ fontVariationSettings: "'opsz' 14" }}>
         +603 6205 3033

@@ -3,7 +3,7 @@ import svgPaths from "./svg-s8kso7ffmq";
 function Frame() {
   return (
     <div className="content-stretch flex gap-[24px] items-center overflow-clip relative shrink-0" data-name="Frame">
-      <p className="relative shrink-0" style={{ fontVariationSettings: "'opsz' 14" }}>{`✉  hello@learninghorizon.my`}</p>
+      <p className="relative shrink-0" style={{ fontVariationSettings: "'opsz' 14" }}>{`✉  enquiry@learninghorizon.asia`}</p>
       <p className="relative shrink-0" style={{ fontVariationSettings: "'opsz' 14" }}>{`📞  +603 6205 3033`}</p>
     </div>
   );
@@ -1413,7 +1413,7 @@ function Frame90() {
       <p className="font-['Fraunces:Black',sans-serif] font-black leading-[60px] min-w-full relative shrink-0 text-[#121a38] text-[56px] tracking-[-1.12px] w-[min-content]" style={{ fontVariationSettings: "'SOFT' 0, 'WONK' 1" }}>
         Everything a parent might ask.
       </p>
-      <p className="font-['DM_Sans:Regular',sans-serif] font-normal leading-[30px] min-w-full relative shrink-0 text-[#3a4052] text-[18px] tracking-[-0.054px] w-[min-content]" style={{ fontVariationSettings: "'opsz' 14" }}>{`Can't find what you're looking for? Our team is happy to help. Reach us on WhatsApp at +603 6205 3033 or email hello@learninghorizon.my.`}</p>
+      <p className="font-['DM_Sans:Regular',sans-serif] font-normal leading-[30px] min-w-full relative shrink-0 text-[#3a4052] text-[18px] tracking-[-0.054px] w-[min-content]" style={{ fontVariationSettings: "'opsz' 14" }}>{`Can't find what you're looking for? Our team is happy to help. Reach us on WhatsApp at +603 6205 3033 or email enquiry@learninghorizon.asia.`}</p>
       <Frame91 />
     </div>
   );
@@ -1912,7 +1912,7 @@ function Frame128() {
         CONTACT
       </p>
       <p className="font-['DM_Sans:Regular',sans-serif] font-normal leading-[26px] relative shrink-0 text-[#faf7f0] text-[16px]" style={{ fontVariationSettings: "'opsz' 14" }}>
-        hello@learninghorizon.my
+        enquiry@learninghorizon.asia
       </p>
       <p className="font-['DM_Sans:Regular',sans-serif] font-normal leading-[26px] relative shrink-0 text-[#faf7f0] text-[16px]" style={{ fontVariationSettings: "'opsz' 14" }}>
         +603 6205 3033

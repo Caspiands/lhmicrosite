@@ -79,7 +79,7 @@ export function FAQ() {
             Everything a parent might ask.
           </h2>
           <p className="text-lg text-[var(--ink-body)] leading-[30px] mb-7" style={{ fontFamily: "var(--font-body)" }}>
-            Can't find what you're looking for? Our team is happy to help. Reach us on WhatsApp at +603 6205 3033 or email hello@learninghorizon.my.
+            Can't find what you're looking for? Our team is happy to help. Reach us on WhatsApp at +603 6205 3033 or email enquiry@learninghorizon.asia.
           </p>
           <div className="bg-[var(--brand-sun-light)] rounded-[20px] p-6">
             <p className="text-xs tracking-[0.6px] font-semibold text-[var(--brand-sun-deep)] mb-3">NEED HELP DECIDING?</p>

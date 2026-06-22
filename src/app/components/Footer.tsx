@@ -29,8 +29,8 @@ export function Footer() {
             >
               CONTACT
             </p>
-            <a href="mailto:hello@learninghorizon.my" className="block text-[15px] hover:underline">
-              hello@learninghorizon.my
+            <a href="mailto:enquiry@learninghorizon.asia" className="block text-[15px] hover:underline">
+              enquiry@learninghorizon.asia
             </a>
             <a href="tel:+60362053033" className="block text-[15px] hover:underline mt-1">
               +603 6205 3033
