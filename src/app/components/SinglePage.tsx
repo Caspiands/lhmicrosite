@@ -337,7 +337,7 @@ function AboutSection() {
         </div>
 
         <ScrollReveal delay={0.15}>
-          <div className="mt-10 max-w-[860px] bg-[#FC8529] rounded-2xl px-8 py-6">
+          <div className="mt-10 w-full bg-[#FC8529] rounded-2xl px-8 py-6">
             <p
               className="text-[#ffffff] text-[17px] leading-[1.7]"
               style={{ fontFamily: "var(--font-body)", fontWeight: 600 }}
