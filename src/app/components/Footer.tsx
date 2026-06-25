@@ -32,17 +32,6 @@ export function Footer() {
             <a href="mailto:enquiry@learninghorizon.asia" className="block text-[15px] hover:underline">
               enquiry@learninghorizon.asia
             </a>
-            <a href="tel:+60362053033" className="block text-[15px] hover:underline mt-1">
-              +603 6205 3033
-            </a>
-            <a
-              href="https://wa.me/60362053033"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-[15px] hover:underline mt-1"
-            >
-              WhatsApp us
-            </a>
           </div>
 
           <div>

@@ -337,15 +337,17 @@ function AboutSection() {
         </div>
 
         <ScrollReveal delay={0.15}>
-          <p
-            className="mt-10 text-[var(--ink-body)] text-[17px] leading-[1.7] max-w-[860px]"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            Guided by purpose and driven by care, Learning Horizon Malaysia plays a vital role in
-            shaping the future of early childhood education - empowering educators, strengthening
-            operations and creating meaningful, enriching learning journeys for children across
-            Malaysia.
-          </p>
+          <div className="mt-10 max-w-[860px] bg-[#FC8529] rounded-2xl px-8 py-6">
+            <p
+              className="text-[#ffffff] text-[17px] leading-[1.7]"
+              style={{ fontFamily: "var(--font-body)", fontWeight: 600 }}
+            >
+              Guided by purpose and driven by care, Learning Horizon Malaysia plays a vital role in
+              shaping the future of early childhood education - empowering educators, strengthening
+              operations and creating meaningful, enriching learning journeys for children across
+              Malaysia.
+            </p>
+          </div>
         </ScrollReveal>
       </div>
     </section>
@@ -369,7 +371,6 @@ function ProgrammesSection() {
                 className="text-4xl lg:text-[56px] leading-[1.05] tracking-tight text-[var(--brand-navy)]"
                 style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
               >
-                Eight ways to{" "}
                 <span className="italic" style={{ fontWeight: 600, color: "#00A94F" }}>
                   spark curiosity.
                 </span>

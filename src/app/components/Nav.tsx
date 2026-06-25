@@ -26,7 +26,6 @@ export function Nav({ bgColor = "bg-[#faf7f0]" }: { bgColor?: string }) {
           <p>busybeesasia.my&ensp;/&ensp;Learning Horizon&ensp;/&ensp;Holiday Camp 2026</p>
           <div className="flex gap-6">
             <p>✉&ensp;enquiry@learninghorizon.asia</p>
-            <p>📞&ensp;+603 6205 3033</p>
           </div>
         </div>
       </div>
