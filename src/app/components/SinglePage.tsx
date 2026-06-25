@@ -34,78 +34,85 @@ import progBuilder from "../../imports/prog-builder.jpg";
 import progEinstein from "../../imports/prog-einstein.jpg";
 import progThespian from "../../imports/prog-thespian.jpg";
 // ── Programme tabs images (upload to src/imports/ with these exact filenames) ──
-import tabHolidayWorkshopsDesktop   from "../../imports/tab-holiday-workshops-desktop.png";
-import tabHolidayWorkshopsMobile    from "../../imports/tab-holiday-workshops-mobile.png";
-import tabDayCampsDesktop           from "../../imports/tab-day-camps-desktop.png";
-import tabDayCampsMobile            from "../../imports/tab-day-camps-mobile.png";
-import tabExcursionDesktop          from "../../imports/tab-excursion-desktop.png";
-import tabExcursionMobile           from "../../imports/tab-excursion-mobile.png";
-import tabParentChildDesktop        from "../../imports/tab-parent-child-desktop.png";
-import tabParentChildMobile         from "../../imports/tab-parent-child-mobile.png";
-import tabPreschoolDesktop          from "../../imports/tab-preschool-immersion-desktop.png";
-import tabPreschoolMobile           from "../../imports/tab-preschool-immersion-mobile.png";
+import tabHolidayWorkshopsDesktop from "../../imports/tab-holiday-workshops-desktop.png";
+import tabHolidayWorkshopsMobile from "../../imports/tab-holiday-workshops-mobile.png";
+import tabDayCampsDesktop from "../../imports/tab-day-camps-desktop.png";
+import tabDayCampsMobile from "../../imports/tab-day-camps-mobile.png";
+import tabExcursionDesktop from "../../imports/tab-excursion-desktop.png";
+import tabExcursionMobile from "../../imports/tab-excursion-mobile.png";
+import tabParentChildDesktop from "../../imports/tab-parent-child-desktop.png";
+import tabParentChildMobile from "../../imports/tab-parent-child-mobile.png";
+import tabPreschoolDesktop from "../../imports/tab-preschool-immersion-desktop.png";
+import tabPreschoolMobile from "../../imports/tab-preschool-immersion-mobile.png";
 import tabParentalEngagementDesktop from "../../imports/tab-parental-engagement-desktop.png";
-import tabParentalEngagementMobile  from "../../imports/tab-parental-engagement-mobile.png";
+import tabParentalEngagementMobile from "../../imports/tab-parental-engagement-mobile.png";
 
 const programmeLeaflets = [
   {
     name: "Soccer Stars",
     img: progSoccer,
     ageLabel: "Ages 2.5-6",
-    blurb: "Basic soccer skills, coordination and active confidence through fun drills.",
+    blurb:
+      "Basic soccer skills, coordination and active confidence through fun drills.",
     dialogTitle: "Soccer Stars leaflet preview",
   },
   {
     name: "Genio Art",
     img: progGenio,
     ageLabel: "Ages 3-6",
-    blurb: "Creativity, self-expression and intuitive thinking through art, games and craft.",
+    blurb:
+      "Creativity, self-expression and intuitive thinking through art, games and craft.",
     dialogTitle: "Genio Art leaflet preview",
   },
   {
     name: "Karate Kid",
     img: progKarate,
     ageLabel: "Ages 4-6",
-    blurb: "Basic karate movements that build discipline, focus, balance and confidence.",
+    blurb:
+      "Basic karate movements that build discipline, focus, balance and confidence.",
     dialogTitle: "Karate Kid leaflet preview",
   },
   {
     name: "Kidz Can Lead",
     img: progKidzCanLead,
     ageLabel: "Ages 4-6",
-    blurb: "Leadership habits, emotional resilience and respectful teamwork for everyday life.",
+    blurb:
+      "Leadership habits, emotional resilience and respectful teamwork for everyday life.",
     dialogTitle: "Kidz Can Lead leaflet preview",
   },
   {
     name: "Young Ballerina",
     img: progBallerina,
     ageLabel: "Ages 3-6",
-    blurb: "Ballet basics that improve posture, poise, flexibility and body awareness.",
+    blurb:
+      "Ballet basics that improve posture, poise, flexibility and body awareness.",
     dialogTitle: "Young Ballerina leaflet preview",
   },
   {
     name: "Young Builder",
     img: progBuilder,
     ageLabel: "Ages 4-6",
-    blurb: "LEGO-based STEM play that grows imagination, logic and problem-solving.",
+    blurb:
+      "LEGO-based STEM play that grows imagination, logic and problem-solving.",
     dialogTitle: "Young Builder leaflet preview",
   },
   {
     name: "Young Einstein",
     img: progEinstein,
     ageLabel: "Ages 4-6",
-    blurb: "Hands-on science experiments that spark inquiry, discovery and curiosity.",
+    blurb:
+      "Hands-on science experiments that spark inquiry, discovery and curiosity.",
     dialogTitle: "Young Einstein leaflet preview",
   },
   {
     name: "Young Thespian",
     img: progThespian,
     ageLabel: "Ages 4-6",
-    blurb: "Speech, drama and storytelling that strengthen confidence and self-expression.",
+    blurb:
+      "Speech, drama and storytelling that strengthen confidence and self-expression.",
     dialogTitle: "Young Thespian leaflet preview",
   },
 ] as const;
-
 
 function HeroAbout() {
   return (
@@ -303,10 +310,16 @@ function AboutSection() {
             style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
           >
             Part of the{" "}
-            <span className="italic" style={{ fontWeight: 600, color: "#00539B" }}>
+            <span
+              className="italic"
+              style={{ fontWeight: 600, color: "#00539B" }}
+            >
               Busy Bees
             </span>{" "}
-            <span className="italic" style={{ fontWeight: 600, color: "#00A94F" }}>
+            <span
+              className="italic"
+              style={{ fontWeight: 600, color: "#00A94F" }}
+            >
               family.
             </span>
           </h2>
@@ -318,20 +331,23 @@ function AboutSection() {
         >
           <ScrollReveal delay={0.05}>
             <p>
-              Learning Horizon Malaysia is part of the Busy Bees Group, one of the world&apos;s
-              leading providers of early childhood education and care. As a key Enrichment service
-              provider within Busy Bees Asia, Learning Horizon supports a family of established
-              preschool brands in Malaysia, namely The Children&apos;s House Montessori, Small
-              Wonder Preschool Malaysia and Odyssey The Global Preschool.
+              Learning Horizon Malaysia is part of the Busy Bees Group, one of
+              the world&apos;s leading providers of early childhood education
+              and care. As a key Enrichment service provider within Busy Bees
+              Asia, Learning Horizon supports a family of established preschool
+              brands in Malaysia, namely The Children&apos;s House Montessori,
+              Small Wonder Preschool Malaysia and Odyssey The Global Preschool.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <p>
-              With a strong focus on quality, consistency and innovation, Learning Horizon Malaysia
-              works closely with each brand to deliver exceptional, curated enrichment programmes
-              and learning camps in the early years. By combining global best practices with deep
-              local understanding, we ensure every child benefits from a nurturing environment that
-              supports holistic growth and lifelong learning.
+              With a strong focus on quality, consistency and innovation,
+              Learning Horizon Malaysia works closely with each brand to deliver
+              exceptional, curated enrichment programmes and learning camps in
+              the early years. By combining global best practices with deep
+              local understanding, we ensure every child benefits from a
+              nurturing environment that supports holistic growth and lifelong
+              learning.
             </p>
           </ScrollReveal>
         </div>
@@ -342,10 +358,11 @@ function AboutSection() {
               className="text-[#ffffff] text-[17px] leading-[1.7]"
               style={{ fontFamily: "var(--font-body)", fontWeight: 600 }}
             >
-              Guided by purpose and driven by care, Learning Horizon Malaysia plays a vital role in
-              shaping the future of early childhood education - empowering educators, strengthening
-              operations and creating meaningful, enriching learning journeys for children across
-              Malaysia.
+              Guided by purpose and driven by care, Learning Horizon Malaysia
+              plays a vital role in shaping the future of early childhood
+              education - empowering educators, strengthening operations and
+              creating meaningful, enriching learning journeys for children
+              across Malaysia.
             </p>
           </div>
         </ScrollReveal>
@@ -356,7 +373,10 @@ function AboutSection() {
 
 function ProgrammesSection() {
   return (
-    <section id="programmes" className="bg-[var(--brand-cream)] py-20 lg:py-28 px-5 lg:px-20">
+    <section
+      id="programmes"
+      className="bg-[var(--brand-cream)] py-20 lg:py-28 px-5 lg:px-20"
+    >
       <div className="max-w-[1280px] mx-auto">
         <ScrollReveal>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
@@ -371,8 +391,11 @@ function ProgrammesSection() {
                 className="text-4xl lg:text-[56px] leading-[1.05] tracking-tight text-[var(--brand-navy)]"
                 style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
               >
-                <span className="italic" style={{ fontWeight: 600, color: "#00A94F" }}>
-                  spark curiosity.
+                <span
+                  className="italic"
+                  style={{ fontWeight: 600, color: "#00A94F" }}
+                >
+                  Spark curiosity
                 </span>
               </h2>
             </div>
@@ -380,8 +403,9 @@ function ProgrammesSection() {
               className="text-[var(--ink-body)] text-lg max-w-[420px]"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Each of our enrichment programmes are age-appropriate, small-group, and built around
-              play. Pick the right fit for your child.
+              Each of our enrichment programmes are age-appropriate,
+              small-group, and built around play. Pick the right fit for your
+              child.
             </p>
           </div>
         </ScrollReveal>
@@ -410,19 +434,28 @@ function ProgrammesSection() {
                       <div className="absolute inset-x-0 bottom-0 p-5 text-white opacity-0 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0">
                         <div
                           className="inline-flex rounded-full bg-white/18 px-3 py-1 text-[12px] tracking-[0.4px] backdrop-blur-sm"
-                          style={{ fontFamily: "var(--font-body)", fontWeight: 700 }}
+                          style={{
+                            fontFamily: "var(--font-body)",
+                            fontWeight: 700,
+                          }}
                         >
                           {programme.ageLabel}
                         </div>
                         <p
                           className="mt-3 text-[15px] leading-[1.55] text-white/92"
-                          style={{ fontFamily: "var(--font-body)", fontWeight: 500 }}
+                          style={{
+                            fontFamily: "var(--font-body)",
+                            fontWeight: 500,
+                          }}
                         >
                           {programme.blurb}
                         </p>
                         <p
                           className="mt-3 text-[12px] uppercase tracking-[1px] text-white/80"
-                          style={{ fontFamily: "var(--font-body)", fontWeight: 700 }}
+                          style={{
+                            fontFamily: "var(--font-body)",
+                            fontWeight: 700,
+                          }}
                         >
                           Click to enlarge
                         </p>
@@ -433,13 +466,19 @@ function ProgrammesSection() {
                     <div>
                       <p
                         className="text-lg leading-[1.2] text-[var(--brand-navy)]"
-                        style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}
+                        style={{
+                          fontFamily: "var(--font-display)",
+                          fontWeight: 700,
+                        }}
                       >
                         {programme.name}
                       </p>
                       <p
                         className="mt-1 text-[13px] text-[var(--ink-muted)]"
-                        style={{ fontFamily: "var(--font-body)", fontWeight: 600 }}
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          fontWeight: 600,
+                        }}
                       >
                         {programme.ageLabel}
                       </p>
@@ -447,7 +486,10 @@ function ProgrammesSection() {
                     <a
                       href="#contact"
                       className="text-[13px] text-[var(--brand-navy)] hover:underline"
-                      style={{ fontFamily: "var(--font-body)", fontWeight: 600 }}
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontWeight: 600,
+                      }}
                     >
                       Enquire →
                     </a>
@@ -464,13 +506,19 @@ function ProgrammesSection() {
                         <div>
                           <DialogTitle
                             className="text-[28px] leading-[1.1] lg:text-[36px] text-white"
-                            style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
+                            style={{
+                              fontFamily: "var(--font-display)",
+                              fontWeight: 800,
+                            }}
                           >
                             {programme.name}
                           </DialogTitle>
                           <DialogDescription
                             className="mt-2 text-[14px] text-white/80"
-                            style={{ fontFamily: "var(--font-body)", fontWeight: 600 }}
+                            style={{
+                              fontFamily: "var(--font-body)",
+                              fontWeight: 600,
+                            }}
                           >
                             {programme.ageLabel}
                           </DialogDescription>
@@ -479,7 +527,10 @@ function ProgrammesSection() {
                           <button
                             type="button"
                             className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[13px] text-white transition-colors hover:bg-white/16"
-                            style={{ fontFamily: "var(--font-body)", fontWeight: 700 }}
+                            style={{
+                              fontFamily: "var(--font-body)",
+                              fontWeight: 700,
+                            }}
                           >
                             Close
                           </button>
@@ -503,8 +554,8 @@ function ProgrammesSection() {
           className="mt-6 text-[12px] italic text-[var(--ink-muted)]"
           style={{ fontFamily: "var(--font-body)", fontWeight: 500 }}
         >
-          Note: Enrichment programmes currently only available for children enrolled in Busy Bees
-          Group of preschools.
+          Note: Enrichment programmes currently only available for children
+          enrolled in Busy Bees Group of preschools.
         </p>
       </div>
     </section>
@@ -535,10 +586,16 @@ function OurBrandsSection() {
                 style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
               >
                 The preschools{" "}
-                <span className="italic" style={{ fontWeight: 600, color: "#00539B" }}>
+                <span
+                  className="italic"
+                  style={{ fontWeight: 600, color: "#00539B" }}
+                >
                   we
                 </span>{" "}
-                <span className="italic" style={{ fontWeight: 600, color: "#00A94F" }}>
+                <span
+                  className="italic"
+                  style={{ fontWeight: 600, color: "#00A94F" }}
+                >
                   serve.
                 </span>
               </h2>
@@ -547,8 +604,8 @@ function OurBrandsSection() {
               className="text-[var(--ink-body)] text-lg max-w-[420px]"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Trusted preschool partners across Malaysia where Learning Horizon delivers its
-              enrichment programmes.
+              Trusted preschool partners across Malaysia where Learning Horizon
+              delivers its enrichment programmes.
             </p>
           </div>
         </ScrollReveal>
@@ -557,7 +614,11 @@ function OurBrandsSection() {
           {brandLogos.map((brand, index) => (
             <ScrollReveal key={brand.alt} delay={index * 0.08}>
               <div className="bg-[var(--brand-cream)] rounded-[28px] h-[200px] lg:h-[220px] flex items-center justify-center p-8 transition-shadow hover:shadow-[0_12px_32px_rgba(18,26,56,0.08)]">
-                <img src={brand.src} alt={brand.alt} className="max-h-full max-w-full object-contain" />
+                <img
+                  src={brand.src}
+                  alt={brand.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
             </ScrollReveal>
           ))}
@@ -567,19 +628,36 @@ function OurBrandsSection() {
   );
 }
 
-
 function PlusIcon() {
   return (
-    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <rect y="6.66675" width="15" height="1.66667" fill="currentColor" />
-      <rect x="8.33301" width="15" height="1.66667" transform="rotate(90 8.33301 0)" fill="currentColor" />
+      <rect
+        x="8.33301"
+        width="15"
+        height="1.66667"
+        transform="rotate(90 8.33301 0)"
+        fill="currentColor"
+      />
     </svg>
   );
 }
 
 function MinusIcon() {
   return (
-    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <rect y="6.66675" width="15" height="1.66667" fill="currentColor" />
     </svg>
   );
@@ -593,10 +671,16 @@ const programmeTabs = [
     content: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[var(--ink-body)]">
         <div>
-          <p className="mb-2 text-[var(--ink-dark)]" style={{ fontFamily: "var(--font-body)", fontWeight: 700 }}>
+          <p
+            className="mb-2 text-[var(--ink-dark)]"
+            style={{ fontFamily: "var(--font-body)", fontWeight: 700 }}
+          >
             Framework
           </p>
-          <ul className="list-disc pl-5 space-y-1.5 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+          <ul
+            className="list-disc pl-5 space-y-1.5 text-[17px]"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
             <li>Sports</li>
             <li>Aesthetics and Creativity</li>
             <li>Development</li>
@@ -605,10 +689,17 @@ const programmeTabs = [
           </ul>
         </div>
         <div>
-          <p className="text-[17px] mb-2" style={{ fontFamily: "var(--font-body)" }}>
-            Embedded in our holistic SAIL framework, our programmes may focus on one or more of the following themes:
+          <p
+            className="text-[17px] mb-2"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Embedded in our holistic SAIL framework, our programmes may focus on
+            one or more of the following themes:
           </p>
-          <ul className="list-disc pl-5 space-y-1.5 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+          <ul
+            className="list-disc pl-5 space-y-1.5 text-[17px]"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
             <li>Sports and Fitness Courses</li>
             <li>Confident and Communicators Courses</li>
             <li>Cultural Tour</li>
@@ -626,13 +717,20 @@ const programmeTabs = [
     mobileImg: tabDayCampsMobile,
     content: (
       <div className="text-[var(--ink-body)]">
-        <ul className="list-disc pl-5 space-y-1.5 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+        <ul
+          className="list-disc pl-5 space-y-1.5 text-[17px]"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
           <li>Camp Explorer</li>
           <li>Camp Adventure</li>
           <li>Camp Discovery</li>
         </ul>
-        <p className="mt-3 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
-          From exploring to discovering, take a look at our exciting camp series here.
+        <p
+          className="mt-3 text-[17px]"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          From exploring to discovering, take a look at our exciting camp series
+          here.
         </p>
       </div>
     ),
@@ -643,16 +741,26 @@ const programmeTabs = [
     mobileImg: tabExcursionMobile,
     content: (
       <div className="text-[var(--ink-body)]">
-        <p className="text-[17px] mb-2" style={{ fontFamily: "var(--font-body)" }}>
-          Having collaborated with private childcares and kindergartens, the following were customised as part of their curriculums:
+        <p
+          className="text-[17px] mb-2"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          Having collaborated with private childcares and kindergartens, the
+          following were customised as part of their curriculums:
         </p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+        <ul
+          className="list-disc pl-5 space-y-1.5 text-[17px]"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
           <li>Excursion</li>
           <li>Field Trips</li>
           <li>Learning Journey</li>
           <li>Cultural Trails</li>
         </ul>
-        <p className="mt-3 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+        <p
+          className="mt-3 text-[17px]"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
           Speak to us to find out more!
         </p>
       </div>
@@ -664,15 +772,25 @@ const programmeTabs = [
     mobileImg: tabParentChildMobile,
     content: (
       <div className="text-[var(--ink-body)]">
-        <p className="text-[17px] mb-2" style={{ fontFamily: "var(--font-body)" }}>
-          Parents have also enjoyed the following programmes specially designed for them:
+        <p
+          className="text-[17px] mb-2"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          Parents have also enjoyed the following programmes specially designed
+          for them:
         </p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+        <ul
+          className="list-disc pl-5 space-y-1.5 text-[17px]"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
           <li>Parent-Child Cook-Off</li>
           <li>Take Flight</li>
           <li>Overseas Overnight Camps</li>
         </ul>
-        <p className="mt-3 text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
+        <p
+          className="mt-3 text-[17px]"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
           Bond over fun and hands-on activities with us today!
         </p>
       </div>
@@ -685,10 +803,14 @@ const programmeTabs = [
     content: (
       <div className="text-[var(--ink-body)] space-y-3">
         <p className="text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
-          A programme launched to provide a platform for international students to experience the preschool education learning environment of a different culture.
+          A programme launched to provide a platform for international students
+          to experience the preschool education learning environment of a
+          different culture.
         </p>
         <p className="text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
-          We have successfully collaborated with preschools both locally and globally to be engaged in this wonderful experience, speak to us as we welcome students from all around the world.
+          We have successfully collaborated with preschools both locally and
+          globally to be engaged in this wonderful experience, speak to us as we
+          welcome students from all around the world.
         </p>
       </div>
     ),
@@ -703,7 +825,10 @@ const programmeTabs = [
           How do parents encourage 21st century learning?
         </p>
         <p className="text-[17px]" style={{ fontFamily: "var(--font-body)" }}>
-          Join us as we conduct hands-on workshops highlighting the importance of the 21st century skills in today&apos;s society &ndash; a very different approach from the traditional education that parents received when they were younger.
+          Join us as we conduct hands-on workshops highlighting the importance
+          of the 21st century skills in today&apos;s society &ndash; a very
+          different approach from the traditional education that parents
+          received when they were younger.
         </p>
       </div>
     ),
@@ -715,12 +840,15 @@ function ProgrammeTabsSection() {
   const [activeMobile, setActiveMobile] = useState<number | null>(0);
 
   return (
-    <section id="programme-tabs" className="py-16 lg:py-20 px-5 lg:px-20" style={{ background: "rgb(250, 247, 240)" }}>
+    <section
+      id="programme-tabs"
+      className="py-16 lg:py-20 px-5 lg:px-20"
+      style={{ background: "rgb(250, 247, 240)" }}
+    >
       <div className="max-w-[1280px] mx-auto">
-
         {/* Title */}
         <div className="text-center mb-12">
-<h2
+          <h2
             className="text-4xl lg:text-[52px] leading-[1.08] tracking-tight text-[var(--brand-navy)]"
             style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
           >
@@ -730,9 +858,12 @@ function ProgrammeTabsSection() {
 
         {/* ── Desktop: vertical tabs left + content right ── */}
         <div className="hidden md:flex gap-0 items-stretch">
-
           {/* Left: stacked tab buttons */}
-          <div className="w-[300px] shrink-0 flex flex-col gap-3 h-full mt-5" role="tablist" aria-label="Programme categories">
+          <div
+            className="w-[300px] shrink-0 flex flex-col gap-3 h-full mt-5"
+            role="tablist"
+            aria-label="Programme categories"
+          >
             {programmeTabs.map((tab, i) => (
               <button
                 key={tab.title}
@@ -744,7 +875,10 @@ function ProgrammeTabsSection() {
                     ? "bg-[#e0f5ea] text-[#00A94F]"
                     : "bg-[#f0f0f0] text-[#333333] hover:bg-[#e8e8e8]"
                 }`}
-                style={{ fontFamily: "Raleway, Arial, sans-serif", fontWeight: 600 }}
+                style={{
+                  fontFamily: "Raleway, Arial, sans-serif",
+                  fontWeight: 600,
+                }}
               >
                 {tab.title}
               </button>
@@ -752,7 +886,10 @@ function ProgrammeTabsSection() {
           </div>
 
           {/* Right: content — all panels rendered in same grid cell so height = tallest */}
-          <div className="flex-1 min-w-0 p-10 rounded-2xl" style={{ background: "rgb(248, 248, 248)" }}>
+          <div
+            className="flex-1 min-w-0 p-10 rounded-2xl"
+            style={{ background: "rgb(248, 248, 248)" }}
+          >
             <div className="grid">
               {programmeTabs.map((tab, i) => (
                 <div
@@ -764,7 +901,11 @@ function ProgrammeTabsSection() {
                     pointerEvents: active === i ? "auto" : "none",
                   }}
                 >
-                  <img src={tab.desktopImg} alt={tab.title} className="w-full h-auto rounded-xl mb-6" />
+                  <img
+                    src={tab.desktopImg}
+                    alt={tab.title}
+                    className="w-full h-auto rounded-xl mb-6"
+                  />
                   {tab.content}
                 </div>
               ))}
@@ -775,10 +916,18 @@ function ProgrammeTabsSection() {
         {/* ── Mobile: accordion ── */}
         <div className="md:hidden flex flex-col gap-3">
           {programmeTabs.map((tab, i) => (
-            <div key={tab.title} className="rounded-xl overflow-hidden shadow-[inset_0_-6px_8px_rgba(0,0,0,0.08)]" style={{ background: activeMobile === i ? "#e0f5ea" : "#f0f0f0" }}>
+            <div
+              key={tab.title}
+              className="rounded-xl overflow-hidden shadow-[inset_0_-6px_8px_rgba(0,0,0,0.08)]"
+              style={{ background: activeMobile === i ? "#e0f5ea" : "#f0f0f0" }}
+            >
               <button
                 className="w-full flex items-center justify-between px-5 py-4 text-left text-[15px]"
-                style={{ fontFamily: "Raleway, Arial, sans-serif", fontWeight: 600, color: activeMobile === i ? "#00A94F" : "#333333" }}
+                style={{
+                  fontFamily: "Raleway, Arial, sans-serif",
+                  fontWeight: 600,
+                  color: activeMobile === i ? "#00A94F" : "#333333",
+                }}
                 onClick={() => setActiveMobile(activeMobile === i ? null : i)}
                 aria-expanded={activeMobile === i}
               >
@@ -795,8 +944,15 @@ function ProgrammeTabsSection() {
                 }}
               >
                 <div style={{ overflow: "hidden" }}>
-                  <div className="p-5" style={{ background: "rgb(248, 248, 248)" }}>
-                    <img src={tab.mobileImg} alt={tab.title} className="w-full h-auto mb-5 rounded-xl" />
+                  <div
+                    className="p-5"
+                    style={{ background: "rgb(248, 248, 248)" }}
+                  >
+                    <img
+                      src={tab.mobileImg}
+                      alt={tab.title}
+                      className="w-full h-auto mb-5 rounded-xl"
+                    />
                     {tab.content}
                   </div>
                 </div>
@@ -804,7 +960,6 @@ function ProgrammeTabsSection() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
@@ -814,7 +969,9 @@ function ContactSection() {
   useEffect(() => {
     function onPrefill(event: Event) {
       const detail = (event as CustomEvent).detail;
-      const select = document.querySelector<HTMLSelectElement>("select[name='programme']");
+      const select = document.querySelector<HTMLSelectElement>(
+        "select[name='programme']",
+      );
 
       if (select && (detail === "sky-rangers" || detail === "brave-voices")) {
         select.value = detail;
@@ -827,7 +984,10 @@ function ContactSection() {
   }, []);
 
   return (
-    <section id="contact" className="bg-[var(--brand-navy)] py-20 lg:py-28 px-5 lg:px-20">
+    <section
+      id="contact"
+      className="bg-[var(--brand-navy)] py-20 lg:py-28 px-5 lg:px-20"
+    >
       <div className="max-w-[1280px] mx-auto">
         <ScrollReveal>
           <div className="max-w-[680px] mb-12">
@@ -842,7 +1002,10 @@ function ContactSection() {
               style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
             >
               Reserve a spot, or{" "}
-              <span className="italic" style={{ fontWeight: 600, color: "#00A94F" }}>
+              <span
+                className="italic"
+                style={{ fontWeight: 600, color: "#00A94F" }}
+              >
                 just say hello.
               </span>
             </h2>
@@ -850,13 +1013,16 @@ function ContactSection() {
               className="text-[var(--ink-subtle)] text-lg mt-5 leading-[1.6]"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Drop your details and we&apos;ll WhatsApp you within 24 hours with the centre
-              options nearest to you.
+              Drop your details and we&apos;ll WhatsApp you within 24 hours with
+              the centre options nearest to you.
             </p>
           </div>
         </ScrollReveal>
         <div className="bg-[var(--brand-cream)] rounded-[32px] p-6 lg:p-10">
-          <InterestForm defaultProgramme="sky-rangers" accentColor="var(--brand-sun)" />
+          <InterestForm
+            defaultProgramme="sky-rangers"
+            accentColor="var(--brand-sun)"
+          />
         </div>
       </div>
     </section>
