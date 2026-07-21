@@ -564,9 +564,21 @@ function ProgrammesSection() {
 
 function OurBrandsSection() {
   const brandLogos = [
-    { src: brandTCH, alt: "The Children's House Montessori" },
-    { src: brandSmallWonder, alt: "Small Wonder Preschool Malaysia" },
-    { src: brandOdyssey, alt: "Odyssey The Global Preschool" },
+    {
+      src: brandTCH,
+      alt: "The Children's House Montessori",
+      href: "https://www.thechildrenshouse.com.my/",
+    },
+    {
+      src: brandSmallWonder,
+      alt: "Small Wonder Preschool Malaysia",
+      href: "https://smallwonderpreschool.com/MY/",
+    },
+    {
+      src: brandOdyssey,
+      alt: "Odyssey The Global Preschool",
+      href: "https://theodyssey.global/my/",
+    },
   ];
 
   return (
@@ -613,13 +625,18 @@ function OurBrandsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {brandLogos.map((brand, index) => (
             <ScrollReveal key={brand.alt} delay={index * 0.08}>
-              <div className="bg-[var(--brand-cream)] rounded-[28px] h-[200px] lg:h-[220px] flex items-center justify-center p-8 transition-shadow hover:shadow-[0_12px_32px_rgba(18,26,56,0.08)]">
+              <a
+                href={brand.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-[var(--brand-cream)] rounded-[28px] h-[200px] lg:h-[220px] flex items-center justify-center p-8 transition-shadow hover:shadow-[0_12px_32px_rgba(18,26,56,0.08)]"
+              >
                 <img
                   src={brand.src}
                   alt={brand.alt}
                   className="max-h-full max-w-full object-contain"
                 />
-              </div>
+              </a>
             </ScrollReveal>
           ))}
         </div>
