@@ -966,23 +966,6 @@ function ProgrammeTabsSection() {
 }
 
 function ContactSection() {
-  useEffect(() => {
-    function onPrefill(event: Event) {
-      const detail = (event as CustomEvent).detail;
-      const select = document.querySelector<HTMLSelectElement>(
-        "select[name='programme']",
-      );
-
-      if (select && (detail === "sky-rangers" || detail === "brave-voices")) {
-        select.value = detail;
-        select.dispatchEvent(new Event("change", { bubbles: true }));
-      }
-    }
-
-    window.addEventListener("prefill-programme", onPrefill);
-    return () => window.removeEventListener("prefill-programme", onPrefill);
-  }, []);
-
   return (
     <section
       id="contact"
@@ -1019,10 +1002,7 @@ function ContactSection() {
           </div>
         </ScrollReveal>
         <div className="bg-[var(--brand-cream)] rounded-[32px] p-6 lg:p-10">
-          <InterestForm
-            defaultProgramme="sky-rangers"
-            accentColor="var(--brand-sun)"
-          />
+          <InterestForm />
         </div>
       </div>
     </section>

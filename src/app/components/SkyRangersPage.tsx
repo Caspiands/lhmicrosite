@@ -359,7 +359,7 @@ function FormSection() {
           </p>
         </ScrollReveal>
         <div className="w-full">
-          <InterestForm defaultProgramme="sky-rangers" accentColor="var(--brand-yellow)" />
+          <InterestForm />
         </div>
       </div>
     </section>
