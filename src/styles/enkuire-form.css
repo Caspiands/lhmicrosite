@@ -86,6 +86,13 @@
   outline: none !important;
 }
 
+#enkuire-form
+  .enkuire-embed-root.enkuire-embed-root
+  .enkuire-embed-field
+  select.unselected {
+  color: #93a1b7 !important;
+}
+
 /* Phone row = visible input shell */
 #enkuire-form .enkuire-embed-root.enkuire-embed-root .enkuire-embed-phone-row {
   border: 1px solid var(--ink-border) !important;
@@ -251,10 +258,44 @@
   padding: 16px 20px !important;
 }
 
-@media (max-width: 639px) {
+@media (max-width: 767px) {
   #enkuire-form .enkuire-embed-root.enkuire-embed-root .row {
     flex-direction: column !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
     gap: 16px !important;
   }
+
+  #enkuire-form
+    .enkuire-embed-root.enkuire-embed-root
+    .row
+    > .enkuire-embed-field {
+    flex: 1 1 auto !important;
+    flex-basis: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #enkuire-form
+    .enkuire-embed-root.enkuire-embed-root
+    .enkuire-embed-field
+    input:not([type="checkbox"]):not([type="radio"]),
+  #enkuire-form
+    .enkuire-embed-root.enkuire-embed-root
+    .enkuire-embed-field
+    textarea,
+  #enkuire-form
+    .enkuire-embed-root.enkuire-embed-root
+    .enkuire-embed-field
+    select,
+  #enkuire-form
+    .enkuire-embed-root.enkuire-embed-root
+    .enkuire-embed-phone,
+  #enkuire-form
+    .enkuire-embed-root.enkuire-embed-root
+    .enkuire-embed-phone-row {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }
+
