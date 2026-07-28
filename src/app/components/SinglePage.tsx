@@ -33,6 +33,9 @@ import progBallerina from "../../imports/prog-ballerina.jpg";
 import progBuilder from "../../imports/prog-builder.jpg";
 import progEinstein from "../../imports/prog-einstein.jpg";
 import progThespian from "../../imports/prog-thespian.jpg";
+import eventParentTalk from "../../imports/event-parent-talk.jpg";
+import eventBmLanguage from "../../imports/event-bm-language.jpg";
+import eventMandarinLanguage from "../../imports/event-mandarin-language.jpg";
 // ── Programme tabs images (upload to src/imports/ with these exact filenames) ──
 import tabHolidayWorkshopsDesktop from "../../imports/tab-holiday-workshops-desktop.png";
 import tabHolidayWorkshopsMobile from "../../imports/tab-holiday-workshops-mobile.png";
@@ -111,6 +114,45 @@ const programmeLeaflets = [
     blurb:
       "Speech, drama and storytelling that strengthen confidence and self-expression.",
     dialogTitle: "Young Thespian leaflet preview",
+  },
+] as const;
+
+const eventLeaflets = [
+  {
+    name: "The Secret Behind Behaviour",
+    type: "Parent Talk",
+    img: eventParentTalk,
+    dateLabel: "1 Aug · 8 Aug · 5 Sep",
+    metaLabel: "Parents · Children aged 1–8",
+    priceLabel: "RM30",
+    blurb:
+      "A 45-minute talk with Sarine Tan on why children behave the way they do — and how parents can respond with clarity and confidence.",
+    dialogTitle: "Parent talk leaflet preview",
+    accent: "#E78912",
+  },
+  {
+    name: "Bahasa Melayu Fast Track",
+    type: "Language Programme",
+    img: eventBmLanguage,
+    dateLabel: "Fast Track Sessions",
+    metaLabel: "Building BM foundations",
+    priceLabel: null,
+    blurb:
+      "An engaging Bahasa Melayu fast-track programme that strengthens language foundations for primary school success.",
+    dialogTitle: "Bahasa Melayu programme leaflet preview",
+    accent: "#00A94F",
+  },
+  {
+    name: "Mandarin Fast Track",
+    type: "Language Programme",
+    img: eventMandarinLanguage,
+    dateLabel: "3 Aug – 11 Dec",
+    metaLabel: "Ages 5–6",
+    priceLabel: null,
+    blurb:
+      "Build strong Mandarin foundations through a structured fast-track programme designed for primary school readiness.",
+    dialogTitle: "Mandarin programme leaflet preview",
+    accent: "#3BB4B8",
   },
 ] as const;
 
@@ -557,6 +599,247 @@ function ProgrammesSection() {
           Note: Enrichment programmes currently only available for children
           enrolled in Busy Bees Group of preschools.
         </p>
+      </div>
+    </section>
+  );
+}
+
+function EventsSection() {
+  return (
+    <section
+      id="events"
+      className="relative overflow-hidden py-20 lg:py-28 px-5 lg:px-20"
+      style={{
+        background:
+          "linear-gradient(165deg, #121A38 0%, #1A2750 42%, #24345F 100%)",
+      }}
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 -right-20 h-72 w-72 rounded-full opacity-30"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(255,184,32,0.45) 0%, transparent 70%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-28 -left-16 h-80 w-80 rounded-full opacity-25"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(59,180,184,0.4) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative max-w-[1280px] mx-auto">
+        <ScrollReveal>
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
+            <div>
+              <p
+                className="text-[var(--brand-yellow)] text-[12px] tracking-[1.8px] mb-5"
+                style={{ fontFamily: "var(--font-body)", fontWeight: 700 }}
+              >
+                EVENTS & WORKSHOPS
+              </p>
+              <h2
+                className="text-4xl lg:text-[56px] leading-[1.05] tracking-tight text-[var(--brand-cream)]"
+                style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
+              >
+                Discover{" "}
+                <span
+                  className="italic"
+                  style={{ fontWeight: 600, color: "#00A94F" }}
+                >
+                  What&apos;s Happening
+                </span>
+              </h2>
+            </div>
+            <p
+              className="text-[var(--ink-subtle)] text-lg max-w-[440px]"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              From hands-on workshops to holiday camps, explore exciting
+              opportunities for children to learn, create and grow.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div
+          className="-mx-5 lg:-mx-20 px-5 lg:px-20 overflow-x-auto scroll-smooth snap-x snap-mandatory"
+          style={{ scrollbarWidth: "thin" }}
+        >
+          <div
+            className={`flex gap-5 px-2 lg:px-3 pb-4 ${
+              eventLeaflets.length <= 3
+                ? "lg:justify-center"
+                : "lg:justify-start"
+            }`}
+          >
+            {eventLeaflets.map((event) => (
+              <Dialog key={event.name}>
+                <div className="group snap-start shrink-0 w-[calc(100vw-40px)] sm:w-[320px] lg:w-[min(360px,calc((1280px-2*20px)/3))] bg-white/95 rounded-[28px] overflow-hidden border border-white/10 shadow-[0_8px_28px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_48px_rgba(0,0,0,0.32)] hover:border-white/25">
+                  <DialogTrigger asChild>
+                    <button
+                      type="button"
+                      aria-label={`Open full leaflet for ${event.name}`}
+                      className="relative block w-full aspect-[3/4] overflow-hidden bg-[var(--ink-bg)] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-yellow)]/50"
+                    >
+                      <img
+                        src={event.img}
+                        alt={event.name}
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.05] group-focus-within:scale-[1.05]"
+                        loading="lazy"
+                      />
+                      <div
+                        className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[11px] tracking-[0.6px] text-white shadow-[0_6px_16px_rgba(18,26,56,0.25)]"
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          fontWeight: 700,
+                          background: event.accent,
+                        }}
+                      >
+                        {event.type}
+                      </div>
+                      {event.priceLabel ? (
+                        <div
+                          className="absolute right-4 top-4 rounded-full bg-[var(--brand-navy)] px-3 py-1.5 text-[12px] tracking-[0.4px] text-[var(--brand-yellow)] shadow-[0_6px_16px_rgba(18,26,56,0.28)]"
+                          style={{
+                            fontFamily: "var(--font-body)",
+                            fontWeight: 800,
+                          }}
+                        >
+                          {event.priceLabel}
+                        </div>
+                      ) : null}
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,26,56,0.05)_0%,rgba(18,26,56,0.88)_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100" />
+                      <div className="absolute inset-x-0 bottom-0 p-5 text-white opacity-0 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0">
+                        <p
+                          className="text-[13px] tracking-[0.4px] text-[var(--brand-yellow)]"
+                          style={{
+                            fontFamily: "var(--font-body)",
+                            fontWeight: 700,
+                          }}
+                        >
+                          {event.dateLabel}
+                        </p>
+                        <p
+                          className="mt-2 text-[15px] leading-[1.55] text-white/92"
+                          style={{
+                            fontFamily: "var(--font-body)",
+                            fontWeight: 500,
+                          }}
+                        >
+                          {event.blurb}
+                        </p>
+                        <p
+                          className="mt-3 text-[12px] uppercase tracking-[1px] text-white/80"
+                          style={{
+                            fontFamily: "var(--font-body)",
+                            fontWeight: 700,
+                          }}
+                        >
+                          Click to enlarge
+                        </p>
+                      </div>
+                    </button>
+                  </DialogTrigger>
+                  <div className="p-5 flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <p
+                        className="text-lg leading-[1.2] text-[var(--brand-navy)]"
+                        style={{
+                          fontFamily: "var(--font-display)",
+                          fontWeight: 700,
+                        }}
+                      >
+                        {event.name}
+                      </p>
+                      <p
+                        className="mt-1.5 text-[13px] text-[var(--ink-muted)]"
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {event.dateLabel}
+                      </p>
+                      <p
+                        className="mt-1 text-[12px] text-[var(--ink-light)]"
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          fontWeight: 500,
+                        }}
+                      >
+                        {event.metaLabel}
+                      </p>
+                    </div>
+                    <a
+                      href="#contact"
+                      className="shrink-0 rounded-full bg-[var(--brand-navy)] px-3.5 py-2 text-[12px] text-[var(--brand-cream)] transition-transform hover:scale-[1.03] active:scale-[0.98]"
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontWeight: 700,
+                      }}
+                    >
+                      Enquire →
+                    </a>
+                  </div>
+                </div>
+                <DialogPrimitive.Portal>
+                  <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-[rgba(18,26,56,0.82)]" />
+                  <DialogPrimitive.Content
+                    aria-label={event.dialogTitle}
+                    className="fixed inset-0 z-50 px-4 py-6 lg:px-8 lg:py-10 focus:outline-none"
+                  >
+                    <div className="mx-auto flex h-full max-w-[1180px] flex-col">
+                      <div className="mb-4 flex items-start justify-between gap-4 text-white">
+                        <div>
+                          <DialogTitle
+                            className="text-[28px] leading-[1.1] lg:text-[36px] text-white"
+                            style={{
+                              fontFamily: "var(--font-display)",
+                              fontWeight: 800,
+                            }}
+                          >
+                            {event.name}
+                          </DialogTitle>
+                          <DialogDescription
+                            className="mt-2 text-[14px] text-white/80"
+                            style={{
+                              fontFamily: "var(--font-body)",
+                              fontWeight: 600,
+                            }}
+                          >
+                            {event.type} · {event.dateLabel}
+                          </DialogDescription>
+                        </div>
+                        <DialogClose asChild>
+                          <button
+                            type="button"
+                            className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[13px] text-white transition-colors hover:bg-white/16"
+                            style={{
+                              fontFamily: "var(--font-body)",
+                              fontWeight: 700,
+                            }}
+                          >
+                            Close
+                          </button>
+                        </DialogClose>
+                      </div>
+                      <div className="min-h-0 flex-1 overflow-auto rounded-[28px] bg-[rgba(255,248,240,0.96)] p-3 lg:p-5">
+                        <img
+                          src={event.img}
+                          alt={`${event.name} leaflet`}
+                          className="mx-auto h-auto w-full max-w-[820px] rounded-[20px] shadow-[0_24px_60px_rgba(18,26,56,0.22)]"
+                        />
+                      </div>
+                    </div>
+                  </DialogPrimitive.Content>
+                </DialogPrimitive.Portal>
+              </Dialog>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -1032,6 +1315,7 @@ export function SinglePage() {
       <HeroAbout />
       <AboutSection />
       <ProgrammesSection />
+      <EventsSection />
       <OurBrandsSection />
       <ProgrammeTabsSection />
       <ContactSection />
