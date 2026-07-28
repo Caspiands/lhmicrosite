@@ -1,4 +1,9 @@
 import { useEffect, useRef } from "react";
+import {
+  applyEnquireMessageWhenReady,
+  ENQUIRE_PREFILL_EVENT,
+  ENQUIRE_STORAGE_KEY,
+} from "../lib/enquirePrefill";
 
 const ENKUIRE_SCRIPT_SRC = "https://app.enkuire.com/embed/v1/enkuire-embed.js";
 const ENKUIRE_PUBLIC_KEY = "pk_246e8988984d5725b18ac9493cbde15c";
@@ -28,6 +33,37 @@ export function InterestForm() {
     return () => {
       script.remove();
       mounted.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelPending: (() => void) | undefined;
+
+    const apply = (message: string) => {
+      cancelPending?.();
+      cancelPending = applyEnquireMessageWhenReady(message);
+    };
+
+    const onPrefill = (event: Event) => {
+      const message = (event as CustomEvent<{ message?: string }>).detail
+        ?.message;
+      if (typeof message === "string" && message.trim()) {
+        apply(message);
+      }
+    };
+
+    window.addEventListener(ENQUIRE_PREFILL_EVENT, onPrefill);
+
+    try {
+      const stored = sessionStorage.getItem(ENQUIRE_STORAGE_KEY);
+      if (stored) apply(stored);
+    } catch {
+      // ignore
+    }
+
+    return () => {
+      window.removeEventListener(ENQUIRE_PREFILL_EVENT, onPrefill);
+      cancelPending?.();
     };
   }, []);
 

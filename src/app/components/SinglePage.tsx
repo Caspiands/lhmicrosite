@@ -4,6 +4,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { ScrollReveal } from "./ScrollReveal";
 import { InterestForm } from "./InterestForm";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { requestEnquirePrefill } from "../lib/enquirePrefill";
 import {
   Carousel,
   CarouselApi,
@@ -527,6 +528,10 @@ function ProgrammesSection() {
                     </div>
                     <a
                       href="#contact"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        requestEnquirePrefill(programme.name, "programme");
+                      }}
                       className="text-[13px] text-[var(--brand-navy)] hover:underline"
                       style={{
                         fontFamily: "var(--font-body)",
@@ -775,6 +780,10 @@ function EventsSection() {
                     </div>
                     <a
                       href="#contact"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        requestEnquirePrefill(event.name, "event");
+                      }}
                       className="shrink-0 rounded-full bg-[var(--brand-navy)] px-3.5 py-2 text-[12px] text-[var(--brand-cream)] transition-transform hover:scale-[1.03] active:scale-[0.98]"
                       style={{
                         fontFamily: "var(--font-body)",

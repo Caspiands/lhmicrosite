@@ -27,6 +27,47 @@
   margin-bottom: 0 !important;
 }
 
+/* Enkuire pairs fields two-up with flex-wrap:nowrap, so message + consent
+   share a half-width row. Force wrap and full-width for both.
+   Message is a text input (name=message), not a textarea. */
+#enkuire-form
+  .enkuire-embed-root.enkuire-embed-root
+  .row:has(#enkuire-field-message),
+#enkuire-form
+  .enkuire-embed-root.enkuire-embed-root
+  .row:has([name="message"]),
+#enkuire-form
+  .enkuire-embed-root.enkuire-embed-root
+  .row:has(textarea),
+#enkuire-form
+  .enkuire-embed-root.enkuire-embed-root
+  .row:has(.enkuire-embed-options) {
+  flex-wrap: wrap !important;
+}
+
+#enkuire-form
+  .enkuire-embed-root.enkuire-embed-root
+  .row
+  > .enkuire-embed-field:has(#enkuire-field-message),
+#enkuire-form
+  .enkuire-embed-root.enkuire-embed-root
+  .row
+  > .enkuire-embed-field:has([name="message"]),
+#enkuire-form
+  .enkuire-embed-root.enkuire-embed-root
+  .row
+  > .enkuire-embed-field:has(textarea),
+#enkuire-form
+  .enkuire-embed-root.enkuire-embed-root
+  .row
+  > .enkuire-embed-field:has(.enkuire-embed-options) {
+  flex: 1 1 100% !important;
+  flex-basis: 100% !important;
+  min-width: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 #enkuire-form .enkuire-embed-root.enkuire-embed-root .enkuire-embed-field > label {
   display: block !important;
   margin-bottom: 8px !important;
