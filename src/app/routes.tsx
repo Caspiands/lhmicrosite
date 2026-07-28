@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router";
 import { Layout } from "./components/Layout";
 import { SinglePage } from "./components/SinglePage";
+import { ThankYouPage } from "./components/ThankYouPage";
 
 function NotFound() {
   return (
@@ -19,6 +20,7 @@ export const router = createBrowserRouter(
       Component: Layout,
       children: [
         { index: true, Component: SinglePage },
+        { path: "thank-you", Component: ThankYouPage },
         { path: "sky-rangers", element: <Navigate to="/#programmes" replace /> },
         { path: "brave-voices", element: <Navigate to="/#programmes" replace /> },
         { path: "*", Component: NotFound },
