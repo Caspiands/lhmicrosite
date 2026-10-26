@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
+    "build:static": "vite build --base /learning-horizon/",
     "dev": "vite"
   },
   "dependencies": {

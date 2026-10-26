@@ -11,17 +11,18 @@ declare global {
 export function ThankYouPage() {
   useEffect(() => {
     document.title = "Thank You | Learning Horizon";
+    const pagePath = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/thank-you`;
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "thank_you_page_view",
-      page_path: "/learning-horizon/thank-you",
+      page_path: pagePath,
       page_title: "Thank You | Learning Horizon",
     });
 
     if (typeof window.gtag === "function") {
       window.gtag("event", "page_view", {
-        page_path: "/learning-horizon/thank-you",
+        page_path: pagePath,
         page_title: "Thank You | Learning Horizon",
       });
       window.gtag("event", "generate_lead", {

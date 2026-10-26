@@ -17,7 +17,9 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: '/learning-horizon/',
+  // Vercel serves the site at the domain root. The Busy Bees static
+  // publish uses `vite build --base /learning-horizon/`.
+  base: process.env.VITE_BASE_PATH || '/',
   plugins: [
     figmaAssetResolver(),
     // The React and Tailwind plugins are both required for Make, even if

@@ -8,7 +8,7 @@ function NotFound() {
     <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-5">
       <h1 className="text-6xl mb-4" style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}>404</h1>
       <p className="text-xl text-[var(--ink-body)] mb-8">Page not found</p>
-      <a href="/learning-horizon/" className="bg-[var(--brand-navy)] text-[var(--brand-cream)] px-6 py-3 rounded-full font-bold">Go home →</a>
+      <a href={import.meta.env.BASE_URL} className="bg-[var(--brand-navy)] text-[var(--brand-cream)] px-6 py-3 rounded-full font-bold">Go home →</a>
     </div>
   );
 }
@@ -27,5 +27,5 @@ export const router = createBrowserRouter(
       ],
     },
   ],
-  { basename: "/learning-horizon" },
+  { basename: import.meta.env.BASE_URL.replace(/\/$/, "") || "/" },
 );
